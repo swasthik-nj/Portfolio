@@ -1,72 +1,52 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import profilePicture from "/_DSC0069.jpg";
 
 export default function Home() {
-  const [bgcolour, setBgcolour] = useState("bg-white");
-  const [textcolour, setTextcolour] = useState("text-black");
-  const [border, setBorder] = useState("border-black");
   const change = () => {
-    if (bgcolour == "bg-white") {
-      setBgcolour("bg-black");
-      setTextcolour("text-white");
-      setBorder("border-white");
-    } else {
-      setBgcolour("bg-white");
-      setTextcolour("text-black");
-      setBorder("border-black");
-    }
+    document.documentElement.classList.toggle("dark");
   };
   return (
-    <div className={`w-full h-screen ${bgcolour}`}>
-      <button className={`${textcolour}`} onClick={change}>
+    <div className="w-full h-screen bg-white dark:bg-black transition-colors duration-700">
+      <button className="text-black dark:text-white" onClick={change}>
         click
       </button>
-      <div className="w-full max-w-[70rem] m-auto  h-screen justify-center items-center flex flex-col gap-6">
+      <div className="w-full max-w-[70rem] mx-auto  min-h-screen justify-center items-center flex flex-col gap-6 sm:px-6 lg:px-8">
         <div className="items-center flex flex-col">
           <img
             src={profilePicture}
             alt="Swasthik NJ"
             srcset=""
-            className="h-30 w-30 rounded-full object-cover"
+            className="h-28 w-28 sm:h-30 sm:w-30 md:w-32 md:h-32 rounded-full object-cover"
           />
-          <p
-            className={`text-[20px] font-stretch-75% font-semibold pt-2 ${textcolour}`}
-          >
+          <p className="text-[18px] sm:text-[20px] font-stretch-75% font-semibold pt-2 text-black dark:text-white">
             Hi I'm Swasthik N J
           </p>
         </div>
-        <div className="flex items-center text-center px-10 ">
-          <p className={`text-6xl/20 font-serif text-shadow-lg ${textcolour}`}>
+        <div className="flex items-center text-center px-4 sm:px-10 ">
+          <p className="text-3xl sm:text-4xl md:text-6xl/20 font-serif text-shadow-lg text-black dark:text-white">
             Learning to Build the Web <br /> Full-Stack Developer in Progress.
           </p>
         </div>
-        <div>
-          <p className="text-[17px]  text-gray-700 text-center">
+        <div className="px-4 sm:px-10">
+          <p className="text-[15px] sm:text-[17px]  text-gray-700 dark:text-gray-400 text-center max-w-xl">
             Web Development Learner from India, passionate about building modern
             web experiences.
           </p>
         </div>
 
-        <div className="flex gap-4 justify-center items-center">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <Link
             to="/explore"
-            className={`px-12 py-2.5 rounded-4xl ${
-              bgcolour === "bg-black"
-                ? "bg-white text-black"
-                : "bg-black text-white"
-            }`}
+            className="w-48 text-center px-6 py-2.5 rounded-3xl bg-black text-white dark:bg-white dark:text-black transition"
           >
             More About
           </Link>
-
           <Link
             to="/resume"
-            className={`text-black px-12 py-2.5 rounded-4xl border ${
-              (border, textcolour)
-            } `}
+            className="w-48 text-center px-6 py-2.5 rounded-3xl border text-black dark:text-white border-black dark:border-white transition"
           >
-            resume
+            Resume
           </Link>
         </div>
       </div>
