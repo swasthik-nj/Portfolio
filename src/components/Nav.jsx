@@ -3,9 +3,9 @@ import React from 'react'
 export default function Nav({ onNavClick }) {
   return (
     <nav className="flex gap-4 p-4">
-      <button onClick={() => onNavClick('about')}>About</button>
-      <button onClick={() => onNavClick('resume')}>Resume</button>
-      <button onClick={() => onNavClick('projects')}>Projects</button>
+      <button onClick={() => onNavClick('about')} className='cursor-pointer'>About</button>
+      <button onClick={() => onNavClick('resume')} className='cursor-pointer'>Resume</button>
+      <button onClick={() => onNavClick('projects')} className='cursor-pointer'>Projects</button>
     </nav>
   )
 }

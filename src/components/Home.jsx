@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import profilePicture from "/_DSC0069.jpg";
-import { FaMoon, FaSun } from "react-icons/fa";
+
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState(false);
