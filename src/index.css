@@ -8,3 +8,26 @@
     margin-top: 20px; /* or use pt-14 equivalent */
   }
 }
+
+.main-head {
+  animation: mainhead 0.8s ease-in forwards;
+  -webkit-animation: mainhead 0.8s ease-in forwards;
+}
+
+@keyframes mainhead {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+    filter: blur(8px);
+    /*moreprominentblur*/:;
+    -webkit-transform: translateY(20px);
+    -moz-transform: translateY(20px);
+    -ms-transform: translateY(20px);
+    -o-transform: translateY(20px);
+}
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}

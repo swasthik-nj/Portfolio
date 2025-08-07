@@ -29,19 +29,19 @@ function App() {
 
   return (
     <div className="min-h-screen w-full bg-black/93 flex justify-center items-start py-10">
-      <div className="max-w-[1200px] w-full flex flex-col lg:flex-row gap-7 md:px-4 px-4">
-        <div className="w-full  h-full bg-neutral-800/70 rounded-2xl flex-shrink-0 text-white border border-gray-500  lg:w-[280px] more ">
+      <div className="max-w-[1200px] w-full flex flex-col lg:flex-row pb-10 gap-7 md:px-4 px-4">
+        <div className="w-full  h-full bg-neutral-800/70 rounded-2xl  flex-shrink-0 text-white border border-gray-500  lg:w-[280px] more ">
           <div className="flex items-center justify-center pt-3 md:pt-0">
             <div className="flex flex-col items-center text-center w-full sm:pt-4">
-              <div className="flex lg:flex-col  lg:justify-center pl-10 justify-start items-center top-0 pb-3 md:pb-0 sm:gap-5  gap-6 w-full">
+              <div className="flex lg:flex-col  lg:justify-center pl-10 md:pl-0 justify-start items-center top-0 pb-3 md:pb-0 w-full">
                 <img
-                  src={profilePicture}
+                  src='https://codewithsadee.github.io/vcard-personal-portfolio/assets/images/my-avatar.png'
                   alt="Swasthik NJ"
                   className="h-20 w-20 sm:h-24 sm:w-24 rounded-full object-cover"
                 />
 
                 <div className="flex flex-col justify-start items-start lg:items-center">
-                  <p className="text-[18px] sm:text-[22px] md:text-[26px] font-semibold  pt-2  ">
+                  <p className="text-[18px] sm:text-[22px] md:text-[26px] font-semibold  ">
                     Swasthik N J
                   </p>
 
@@ -68,7 +68,7 @@ function App() {
 
               <div>
                 <div
-                  className={`transition-all duration-700 transform overflow-hidden ${
+                  className={`transition-all duration-900 ease-in transform overflow-hidden ${
                     showcontent
                       ? "translate-y-0 opacity-100 max-h-[1000px]"
                       : "-translate-y-10 opacity-0 max-h-0"
