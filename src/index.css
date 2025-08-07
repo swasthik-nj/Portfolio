@@ -2,3 +2,9 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 
+
+@media screen and (max-width: 1100px) {
+  .nav {
+    margin-top: 20px; /* or use pt-14 equivalent */
+  }
+}
