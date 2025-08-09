@@ -1,5 +1,6 @@
 import React from "react";
 import cricket from "/cricket.png"
+import web from "/web.png"
 
 export default function About() {
   return (
@@ -12,7 +13,7 @@ export default function About() {
       <p className="pt-5 text-neutral-300 font-mono">
         <span className="pl-10">I’m a</span> passionate full-stack developer in
         progress, currently pursuing my Master of Computer Applications (MCA) at
-        NMAM Institute of Technology. I thrive on learning and building digital
+        NMAM Institute of Technology ,Nitte. I thrive on learning and building digital
         solutions that solve real-world problems. My journey in web development
         started with curiosity and has grown into a strong commitment to
         mastering both frontend and backend technologies.
@@ -29,7 +30,7 @@ export default function About() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 px-0 py-4 ">
           <div className="flex gap-4 items-start rounded-xl border border-gray-500/30 bg-black/20 p-4 shadow-md shadow-gray-600/20">
             <div className="text-yellow-400 text-3xl">
-              <span className="material-symbols-outlined">code</span>
+              <img src={web} className="h-10 w-20" alt="" srcset="" />
             </div>
             <div>
               <h3 className="text-white font-bold text-[18px]">

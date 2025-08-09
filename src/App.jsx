@@ -4,7 +4,7 @@ import Nav from "./components/Nav";
 import About from "./pages/About";
 import Resume from "./pages/Resume";
 import Project from "./pages/Project";
-import profilePicture from "/_DSC0069.jpg";
+// import profilePicture from "/_DSC0069.jpg";
 import { Link } from "react-router-dom";
 import {
   FaAngleDoubleDown,
@@ -30,7 +30,7 @@ function App() {
   return (
     <div className="min-h-screen w-full bg-black/93 flex justify-center items-start py-10">
       <div className="max-w-[1200px] w-full flex flex-col lg:flex-row pb-10 gap-7 md:px-4 px-4">
-        <div className="w-full  h-full bg-neutral-800/70 rounded-2xl  flex-shrink-0 text-white border border-gray-500  lg:w-[280px] more ">
+        <div className="w-full  h-full bg-neutral-800/70 rounded-2xl  flex-shrink-0 text-white border border-gray-500  lg:w-[280px]  more ">
           <div className="flex items-center justify-center pt-3 md:pt-0">
             <div className="flex flex-col items-center text-center w-full sm:pt-4">
               <div className="flex lg:flex-col  lg:justify-center pl-10 md:pl-0 justify-start items-center top-0 pb-3 md:pb-0 w-full">
