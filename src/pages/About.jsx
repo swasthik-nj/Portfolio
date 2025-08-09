@@ -1,6 +1,7 @@
 import React from "react";
 import cricket from "/cricket.png"
 import web from "/web.png"
+import '../index.css'
 
 export default function About() {
   return (
