@@ -15,7 +15,7 @@ useEffect(() => {
   }, []);
   
   return (
-    <div className="w-full h-screen  dark:bg-white bg-gray-500 transition-colors duration-700">
+    <div className="w-full h-screen  dark:bg-white bg-black transition-colors duration-700">
       <div className=" flex items-center gap-5 absolute top-4 right-5 sm:right-14 flex-col sm:flex-row">
         <button
           onClick={change}
