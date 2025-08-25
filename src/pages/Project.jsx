@@ -1,4 +1,5 @@
 import React from 'react'
+import { projects } from '../projects'
 
 export default function Project() {
   return (
@@ -7,28 +8,20 @@ export default function Project() {
         Projects
         <span className="absolute left-0 -bottom-1 h-[6px] w-14 bg-orange-500 rounded-md"></span>
       </h1>
-      <div className='flex gap-5 justify-center flex-wrap'>
-        <div className=' p-2 bg-amber-100 w-fit'>
-          <div className='h-[8rem] md:w-[15rem]   w-[18rem]   bg-amber-400 rounded-md projects'>imge</div>
+      <div  className='flex gap-5 justify-center flex-wrap'>
+      {projects.map((project, index) => (
+        <div key={index} className='flex p-2 bg-amber-100 w-fit'>
           <div>
-            <h1>Project Title</h1>
-            <p>Project Description</p>
+            <div className='flex justify-center items-center'>
+            <img src={project.imageUrl} alt="" srcset="" className='h-[8rem] w-[15rem]    rounded-md projects'/>
+          </div>
+          <div>
+            <h1>{project.title}</h1>
+            <p>{project.description}</p>
+          </div>
           </div>
         </div>
-        <div className=' p-2 bg-amber-100 w-fit'>
-          <div className='h-[8rem] md:w-[15rem]   w-[18rem]   bg-amber-400 rounded-md projects'>imge</div>
-          <div>
-            <h1>Project Title</h1>
-            <p>Project Description</p>
-          </div>
-        </div>
-        <div className=' p-2 bg-amber-100 w-fit'>
-          <div className='h-[8rem] md:w-[15rem]   w-[18rem]  bg-amber-400  rounded-md projects'>imge</div>
-          <div>
-            <h1>Project Title</h1>
-            <p>Project Description</p>
-          </div>
-        </div>
+      ))}
       </div>
     </div>
   )
