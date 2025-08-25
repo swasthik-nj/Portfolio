@@ -26,3 +26,15 @@
     margin-top: 20px;
   }
 }
+@media screen and (max-width: 695px) {
+  .projects {
+    width: 30rem;
+    height: 13rem;
+  }
+}
+@media screen and (max-width: 580px) {
+  .projects {
+    width: 18rem;
+    height: 8rem;
+  }
+}
