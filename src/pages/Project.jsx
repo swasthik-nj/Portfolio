@@ -38,9 +38,10 @@ export default function Project() {
             ))
           : // 🔹 Actual projects
             projects.map((project, index) => (
-              <div
+            <a href={project.url} target="_blank" >
+                <div
                 key={index}
-                className="flex p-3 rounded-sm bg-amber-100 w-[16rem] shadow-md hover:shadow-lg transition"
+                className="flex p-3 rounded-sm bg-gray-600/30 border border-gray-600 w-[16rem] shadow-md hover:shadow-lg transition"
               >
                 <div className="w-full">
                   <div className="flex justify-center items-center w-full">
@@ -51,11 +52,12 @@ export default function Project() {
                     />
                   </div>
                   <div className="mt-2">
-                    <h1 className="font-semibold">{project.title}</h1>
-                    <p className="text-sm text-gray-700">{project.description}</p>
+                    <h1 className="font-semibold text-teal-200">{project.title}</h1>
+                    <p className="text-sm text-gray-400">{project.description}</p>
                   </div>
                 </div>
               </div>
+            </a>
             ))}
       </div>
     </div>
