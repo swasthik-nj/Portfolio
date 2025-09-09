@@ -30,7 +30,7 @@ function App() {
   return (
     <div className="min-h-screen w-full bg-black/93 flex justify-center items-start py-10">
       <div className="max-w-[1200px] w-full flex flex-col lg:flex-row pb-10 gap-7 md:px-4 px-4">
-        <div className="w-full  h-full bg-neutral-800/70 rounded-2xl  flex-shrink-0 text-white border border-gray-500  lg:w-[280px]  more ">
+        <div className="w-full opacity-100  h-full bg-neutral-800/70 rounded-2xl  flex-shrink-0 text-white border border-gray-500  lg:w-[280px]  more ">
           <div className="flex items-center justify-center pt-3 md:pt-0">
             <div className="flex flex-col items-center text-center w-full sm:pt-4">
               <div className="flex lg:flex-col  lg:justify-center pl-10 md:pl-0 justify-start items-center top-0 pb-3 md:pb-0 w-full">
@@ -171,7 +171,7 @@ function App() {
               </div>
             </div>
           </div>
-        </div>
+      </div>
 
         <div className="relative flex-1 bg-neutral-800/70 border border-gray-500 pb-5 px-4 text-white rounded-2xl overflow-y-auto h-fit ">
           <Nav onNavClick={setActivePage} activePage={activePage} />

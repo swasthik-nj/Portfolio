@@ -9,13 +9,13 @@ export default function Resume() {
         Resume
         <span className="absolute left-0 -bottom-1 h-[6px] w-14 bg-orange-500 rounded-md"></span>
       </h1>
-      <div className="pt-5 md:pt-4">
+      <div className="pt-5 md:pt-4 sub-main-head">
         <div className="flex gap-3 items-center">
           <span className="material-symbols-outlined text-amber-300 p-2 rounded-xl bg-[#141414] border-l-2 border-gray-700">
             school
           </span>
 
-          <h1 className="text-2xl font-semibold text-lime-300">Education</h1>
+          <h1 className="text-2xl font-semibold text-lime-300 sub-head">Education</h1>
         </div>
 
         <div className="relative border-l-2 border-amber-200  pl-8 left-5.5 max-w-[97%]">
@@ -41,13 +41,13 @@ export default function Resume() {
       </div>
 
 
-      <div className="pt-5 md:pt-4">
+      <div className="pt-5 md:pt-4 sub-main-head">
         <div className="flex gap-3 items-center">
           <span className="material-symbols-outlined text-amber-300 p-2 rounded-xl bg-[#141414] border-l-2 border-gray-700">
             school
           </span>
 
-          <h1 className="text-2xl font-semibold text-lime-300">Experience</h1>
+          <h1 className="text-2xl font-semibold text-lime-300 sub-head">Experience</h1>
         </div>
 
         <div className="relative border-l-2 border-amber-200  pl-8 left-5.5 max-w-[97%]">
