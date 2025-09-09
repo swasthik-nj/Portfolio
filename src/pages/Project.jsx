@@ -6,7 +6,7 @@ export default function Project() {
 
   useEffect(() => {
     // simulate loading for 1s (replace with API fetch later)
-    const timer = setTimeout(() => setLoading(false), 4000);
+    const timer = setTimeout(() => setLoading(false), 2000);
     return () => clearTimeout(timer);
   }, []);
 
