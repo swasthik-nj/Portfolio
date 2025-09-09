@@ -6,8 +6,12 @@ export default function Nav({ onNavClick, activePage }) {
   return (
     <nav
       className="
+  md:text-[17px]
   text-[15px]
-  gap-6 
+  md:gap-15 
+  gap-7
+  font-medium
+
   p-3
   rounded-tr-3xl 
   rounded-tl-3xl
@@ -30,7 +34,7 @@ export default function Nav({ onNavClick, activePage }) {
           onClick={() => onNavClick(item)}
           className={`relative pb-1 cursor-pointer transition-all duration-300 
             after:content-[''] after:absolute after:left-1/2 after:-bottom-0.5 after:-translate-x-1/2
-            after:h-[2px] after:bg-white after:transition-all after:duration-300
+            after:h-[2px] after:bg-orange-500 after:transition-all after:duration-300
             ${activePage === item ? "after:w-full" : "after:w-0"}
           `}
         >
