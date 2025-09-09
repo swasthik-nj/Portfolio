@@ -20,10 +20,10 @@ export default function Project() {
       <div className="flex gap-5 md:justify-start justify-center  md:pl-2  flex-wrap">
         {loading
           ? // 🔹 Skeletons while loading
-            Array.from({ length: 4 }).map((_, i) => (
+            Array.from({ length: projects.length }).map((_, i) => (
               <div
                 key={i}
-                className="flex p-3 rounded-sm bg-amber-100 w-[16rem] animate-pulse"
+                className="flex p-3 rounded-sm bg-gray-600/30 border border-gray-600 md:w-[16rem] w-[18rem] animate-pulse"
               >
                 <div className="w-full">
                   <div className="flex justify-center items-center w-full">
