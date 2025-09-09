@@ -12,6 +12,12 @@ export const projects = [
         url:"https://swasthik-nj-portfolio.vercel.app/"
     },
     {
+        title: "ChoiceRecipe",
+        description: "Created a recipe website using React and CSS. It's a responsive project that works great on both phones and desktops.",
+        imageUrl: "https://res.cloudinary.com/dm2w1gdeh/image/upload/v1757424702/Screenshot_2025-09-09_185954_xooaqy.png",
+        url:"https://recipe-psi-opal.vercel.app/"
+    },
+    {
         title: "Project One",
         description: "This is a brief description of Project One.",
         imageUrl: "https://cdn-imgix.headout.com/media/images/c9db3cea62133b6a6bb70597326b4a34-388-dubai-img-worlds-of-adventure-tickets-01.jpg",
