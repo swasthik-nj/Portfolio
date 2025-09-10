@@ -131,7 +131,7 @@ function App() {
                         Location
                       </p>
                       <p className="text-[12px] sm:text-[14px] font-semibold">
-                        Dakshina Kannada,
+                        Mangalure,
                         <br />
                         Karnataka, INDIA
                       </p>
