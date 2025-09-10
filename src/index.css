@@ -72,6 +72,52 @@
       filter: blur(0);
     }
   }
+  .sub-btn1 {
+    animation: subbtn1 1.4s  ease-in forwards ;
+    -webkit-animation: subbtn1 1.4s  ease-in forwards ;
+}
+
+  @keyframes subbtn1 {
+    0% {
+      opacity: 0;
+      transform: translateY(40px);
+      filter: blur(10px);
+      -webkit-filter: blur(10px);
+      -webkit-transform: translateY(40px);
+      -moz-transform: translateY(40px);
+      -ms-transform: translateY(40px);
+      -o-transform: translateY(40px);
+}
+
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+      filter: blur(0);
+    }
+  }
+  .sub-btn2 {
+    animation: subbtn2 1.4s  ease-in forwards ;
+    -webkit-animation: subbtn2 1.4s  ease-in forwards ;
+}
+
+  @keyframes subbtn2 {
+    0% {
+      opacity: 0;
+      transform: translateY(65px);
+      filter: blur(10px);
+      -webkit-filter: blur(10px);
+      -webkit-transform: translateY(65px);
+      -moz-transform: translateY(65px);
+      -ms-transform: translateY(65px);
+      -o-transform: translateY(65px);
+}
+
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+      filter: blur(0);
+    }
+  }
 
 
   .sub-div-head {

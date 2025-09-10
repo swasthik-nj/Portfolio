@@ -1,6 +1,6 @@
 import React from "react";
-import cricket from "/cricket.png"
-import web from "/web.png"
+import cricket from "/cricket.png";
+import web from "/web.png";
 
 export default function About() {
   return (
@@ -11,19 +11,15 @@ export default function About() {
       </h1>
 
       <p className="pt-5 text-neutral-300 font-mono sub-head">
-        <span className="pl-10 ">I’m a</span> passionate full-stack developer in
-        progress, currently pursuing my Master of Computer Applications (MCA) at
-        NMAM Institute of Technology ,Nitte. I thrive on learning and building digital
-        solutions that solve real-world problems. My journey in web development
-        started with curiosity and has grown into a strong commitment to
-        mastering both frontend and backend technologies.
+        <span className="pl-10 ">I’m a</span> full-stack developer and a Master
+        of Computer Applications student at NMAM Institute of Technology, Nitte.
+        I enjoy building web applications that solve real-world problems.
       </p>
       <p className="pt-4 text-neutral-300 font-mono sub-head">
-        <span className="pl-10">I</span> have hands-on experience with tools and
-        frameworks like React, Tailwind CSS, Node.js, Express, MongoDB, and I'm
-        currently exploring TypeScript and Next.js to further strengthen my
-        skills. I enjoy working on clean, user-centric UI as much as designing
-        robust backend APIs.
+        <span className="pl-10">I</span>have experience with React, Node.js,
+        Express, and MongoDB, and I am currently learning TypeScript and
+        Next.js. I'm passionate about creating both user-friendly frontends and
+        strong, reliable backends.
       </p>
       <div className="md:pt-10 pt-8">
         <h2 className="text-2xl font-bold sub-main-head">What I'm Doing</h2>
@@ -37,21 +33,26 @@ export default function About() {
                 Learning Full-Stack Development
               </h3>
               <p className="text-gray-300 pt-2">
-                Continuously learning MERN stack and building real-world
-                projects to enhance my development skills
+                I'm strengthening my MERN stack skills by building real-world projects.
               </p>
             </div>
           </div>
 
           <div className="sub-div-head   flex gap-4 items-start  rounded-xl border border-gray-500/30 bg-black/20 p-6 shadow-md shadow-gray-600/20">
             <div className="text-yellow-400 text-3xl">
-              <img src="https://raw.githubusercontent.com/codewithsadee/vcard-personal-portfolio/927f09a6ef894a24cc8aef7a2e51f8e93ac306f7/assets/images/icon-dev.svg" className="h-10 w-20" alt="" srcset="" />
+              <img
+                src="https://raw.githubusercontent.com/codewithsadee/vcard-personal-portfolio/927f09a6ef894a24cc8aef7a2e51f8e93ac306f7/assets/images/icon-dev.svg"
+                className="h-10 w-20"
+                alt=""
+                srcset=""
+              />
             </div>
             <div>
-              <h3 className="text-white font-bold text-[18px] ">Web Development</h3>
+              <h3 className="text-white font-bold text-[18px] ">
+                Web Development
+              </h3>
               <p className="text-gray-300 pt-2">
-                Designing and building responsive, user-friendly websites using
-                React, Tailwind CSS, and Node.js.
+                I build easy-to-use websites with React, Tailwind CSS, and Node.js
               </p>
             </div>
           </div>
@@ -61,29 +62,34 @@ export default function About() {
               <img src={cricket} className="h-10 w-20" alt="" srcset="" />
             </div>
             <div>
-              <h3 className="text-white font-bold text-[18px]">Playing Cricket</h3>
+              <h3 className="text-white font-bold text-[18px]">
+                Playing Cricket
+              </h3>
               <p className="text-gray-300 pt-2">
-                I enjoy playing cricket as a way to stay active and build
-                teamwork skills outside of tech.
+               I play cricket to stay active and practice teamwork.
               </p>
             </div>
           </div>
 
           <div className=" sub-div-head flex gap-4 items-start rounded-xl border border-gray-500/30 bg-black/20 p-6 shadow-md shadow-gray-600/20">
             <div className="text-yellow-400 text-3xl">
-            <img src="https://raw.githubusercontent.com/codewithsadee/vcard-personal-portfolio/927f09a6ef894a24cc8aef7a2e51f8e93ac306f7/assets/images/icon-photo.svg" className="h-10 w-20" alt="" srcset="" />
+              <img
+                src="https://raw.githubusercontent.com/codewithsadee/vcard-personal-portfolio/927f09a6ef894a24cc8aef7a2e51f8e93ac306f7/assets/images/icon-photo.svg"
+                className="h-10 w-20"
+                alt=""
+                srcset=""
+              />
             </div>
             <div>
               <h3 className="text-white font-bold text-[18px]">Photography</h3>
               <p className="text-gray-300 pt-2">
-                I enjoy capturing moments and experimenting with composition and
-                lighting.
+                I enjoy photography and trying out different kinds of shots.
               </p>
             </div>
           </div>
         </div>
       </div>
-              <h2 className="pt-5 text-2xl font-bold mb-4">Tech Stack</h2>
+      <h2 className="pt-5 text-2xl font-bold mb-4">Tech Stack</h2>
 
       <div className=" pb-4 pl-6">
         <div className="sub-head grid grid-cols-2 sm:grid-cols-4 gap-4 text-white ">

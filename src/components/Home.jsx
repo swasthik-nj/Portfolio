@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import profilePicture from "/_DSC0069.jpg";
+import profilePicture from "/Swasthik.jpg";
 
 
 export default function Home() {
@@ -15,7 +15,7 @@ useEffect(() => {
   }, []);
   
   return (
-    <div className="w-full h-screen  dark:bg-white bg-black/93 transition-colors duration-700">
+    <div className=" w-full h-screen  dark:bg-white bg-black/92 transition-colors duration-700">
       <div className=" flex items-center gap-5 absolute top-4 right-5 sm:right-14 flex-col sm:flex-row">
         <button
           onClick={change}
@@ -42,28 +42,28 @@ useEffect(() => {
             src={profilePicture}
             alt="Swasthik NJ"
             srcset=""
-            className="h-28 w-28 sm:h-30 sm:w-30 md:w-32 md:h-32 rounded-full object-cover"
+            className="main-head h-28 w-28 sm:h-30 sm:w-30 md:w-32 md:h-32 rounded-full object-cover "
           />
-          <p className="text-[18px] sm:text-[20px] font-stretch-75% font-semibold pt-2 dark:text-black text-white">
+          <p className="sub-main-head  text-[18px] sm:text-[20px] font-stretch-75% font-semibold pt-2 dark:text-black text-white">
             Hi I'm Swasthik N J
           </p>
         </div>
         <div className="flex items-center text-center px-4 sm:px-10 ">
-          <p className="text-3xl sm:text-4xl md:text-6xl/20 font-serif text-shadow-lg dark:text-black text-white">
-            Learning to Build the Web <br /> Full-Stack Developer in Progress.
+          <p className="main-head text-3xl sm:text-4xl md:text-6xl/20 font-serif text-shadow-lg dark:text-black text-white">
+            Learning to Build the Web, <br /> Full-Stack Developer in Progress.
           </p>
         </div>
         <div className="px-4 sm:px-10">
-          <p className="text-[15px] sm:text-[17px]  dark:text-gray-700 text-gray-400 text-center max-w-xl">
+          <p className="sub-head text-[15px] sm:text-[17px]  dark:text-gray-700 text-gray-400 text-center max-w-xl">
             Web Development Learner from India, passionate about building modern
             web experiences.
           </p>
         </div>
 
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <div className=" flex flex-col sm:flex-row gap-4 justify-center items-center">
           <Link
             to="/explore"
-            className="w-48 text-center px-6 py-2.5 rounded-3xl dark:bg-black dark:text-white bg-white text-black transition flex items-center justify-center gap-2"
+            className="sub-btn1 w-48 text-center px-6 py-2.5 rounded-3xl dark:bg-black dark:text-white bg-white text-black transition flex items-center justify-center gap-2"
           >
             More About
             <span class="material-symbols-outlined">
@@ -73,7 +73,7 @@ arrow_forward
           <Link
             to="https://tinyurl.com/swasthiknj-resume"
             target="_blank"
-            className="w-48 text-center px-6 py-2.5 rounded-3xl border dark:text-black text-white dark:border-black border-white transition flex items-center justify-center gap-2"
+            className="sub-btn2 w-48 text-center px-6 py-2.5 rounded-3xl border dark:text-black text-white dark:border-black border-white transition flex items-center justify-center gap-2"
           >
             Resume
             <span className="material-symbols-outlined">download</span>

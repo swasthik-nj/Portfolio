@@ -9,9 +9,4 @@ export const eduData = [
         year: "2020 - 2022",
         description: "Completed Pre-University education in Science with Computer Science as a core subject, gaining solid foundations in programming, mathematics, and logical reasoning.",
     },
-    {
-        institution: "St. George High School, Nelyadi",
-        year: "2010 - 2020",
-        description: "Completed secondary education with emphasis on core academics while developing analytical, communication, and problem-solving skills.",
-    },
 ]
