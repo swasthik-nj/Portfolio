@@ -33,37 +33,7 @@ Google Material Symbols: Used for modern and clean iconography.
 
 Deployment:
 
-(You can add your hosting platform here, e.g., Vercel, Netlify, GitHub Pages)
+https://swasthik-nj-portfolio.vercel.app/
 
-🚀 Setup and Installation
-To run this project locally, follow these simple steps:
-
-Clone the repository:
-
-Bash
-
-git clone https://github.com/swasthik-nj/Portfolio
-Navigate to the project directory:
-
-Bash
-
-cd your-repo-name
-Install the dependencies:
-
-Bash
-
-npm install
-Start the development server:
-
-Bash
-
-npm start
-The application will be available at http://localhost:3000.
-
-📄 License
-This project is open source and available under the MIT License.
-
-📧 Contact
-Feel free to reach out to me!
 
 Email: swastiknj76@gmail.com
