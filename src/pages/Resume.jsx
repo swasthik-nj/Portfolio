@@ -66,8 +66,8 @@ export default function Resume() {
                 <p className="text-gray-100 dark:text-gray-300  text-sm ">
                   {item.desc}
                 </p>
-                <a href={item.url} className="text-blue-300 flex items-center gap-2.5 pt-1.5 " target="_blank" rel="noopener noreferrer">View <span className="material-symbols-outlined h-5 w-2">
-card_membership
+                <a href={item.url} className="text-white flex items-center gap-2.5 pt-1.5" target="_blank" rel="noopener noreferrer">View <span className="material-symbols-outlined text-green-500 text-[10px] flex items-center justify-center">
+visibility
 </span></a>
               </div>
             </div>
