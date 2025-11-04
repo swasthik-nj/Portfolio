@@ -16,8 +16,8 @@ export const Experience = [
         url:"https://drive.google.com/file/d/17tvD3Vly9JPvxnAKECfMNxDfDCec3kZ9/view?usp=sharing"
     },
     {
-        company:"EdunetFoundation",
+        company:"Edunet Foundation",
         desc:"Completed 6 weeks Internship on Front End WebDevelopment in collaboration with All India Council for Technical Education (AICTE)",
-        url:"https://drive.google.com/file/d/17tvD3Vly9JPvxnAKECfMNxDfDCec3kZ9/view?usp=sharing"
+        url:"https://drive.google.com/file/d/1iVnFBODXRxf0TcB684oQscObPsYTgrEc/view?usp=sharing"
     }
 ]
