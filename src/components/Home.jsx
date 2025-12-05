@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import profilePicture from "/Swasthik.jpg";
+import profilePicture from "/swanj.jpeg";
 
 export default function Home() {
   
