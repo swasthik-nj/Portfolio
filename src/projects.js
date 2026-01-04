@@ -17,6 +17,12 @@ export const projects = [
         imageUrl: "https://res.cloudinary.com/dm2w1gdeh/image/upload/v1757424702/Screenshot_2025-09-09_185954_xooaqy.png",
         url:"https://recipe-psi-opal.vercel.app/"
     },
+    {
+        title: "Alumni System",
+        description: "Alumni System — A full-stack web application that connects alumni through events, mentorship programs, community discussions, and donation management, built with React, Node.js, and MongoDB.",
+        imageUrl: "https://res.cloudinary.com/dm2w1gdeh/image/upload/v1767509225/Screenshot_2026-01-04_121512_rrlx36.png",
+        url:"https://alumni-frontend-lovat.vercel.app/"
+    },
     
 
 ]
