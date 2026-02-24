@@ -84,7 +84,7 @@ export default function Home() {
             <span className="material-symbols-outlined">arrow_forward</span>
           </Link>
           <Link
-            to="https://tinyurl.com/swasthiknj-resume"
+            to="https://tinyurl.com/swasthiknj-resumezz"
             target="_blank"
             className="sub-btn2 w-48 text-center px-6 py-2.5 rounded-3xl border dark:text-black text-white dark:border-black border-white transition flex items-center justify-center gap-2"
           >
