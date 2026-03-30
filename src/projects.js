@@ -23,6 +23,12 @@ export const projects = [
         imageUrl: "https://res.cloudinary.com/dm2w1gdeh/image/upload/v1767509225/Screenshot_2026-01-04_121512_rrlx36.png",
         url:"https://alumni-frontend-lovat.vercel.app/"
     },
+    {
+        title: "Kunchaladda Gallery",
+        description: "A responsive gallery website showcasing beautiful photographs and artwork, built with React and CSS.",
+        imageUrl: "https://res.cloudinary.com/dm2w1gdeh/image/upload/v1774844201/Screenshot_2026-03-30_094528_uxe9pw.png",
+        url:"https://kunchaladda-star-frontend.vercel.app/"
+    },
     
 
 ]
