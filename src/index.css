@@ -220,6 +220,15 @@
   animation: caretBlink 1s step-end infinite;
 }
 
+.terminal-scroll {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.terminal-scroll::-webkit-scrollbar {
+  display: none;
+}
+
 @media screen and (max-width: 1100px) {
   .nav {
     margin-top: 20px;

@@ -33,7 +33,7 @@ Google Material Symbols: Used for modern and clean iconography.
 
 Deployment:
 
-https://swasthik-nj-portfolio.vercel.app/
+https://swasthik-nj.me/
 
 
 Email: swastiknj76@gmail.com

@@ -417,7 +417,7 @@ export default function CareerShell({ open, onClose }) {
 
         {/* Output */}
         <div
-          className="flex-1 overflow-y-auto px-4 py-3 font-mono text-[13px] leading-relaxed sm:text-[13.5px]"
+          className="terminal-scroll flex-1 overflow-y-auto px-4 py-3 font-mono text-[13px] leading-relaxed sm:text-[13.5px]"
           data-lenis-prevent
         >
           {lines.map((l) => (
