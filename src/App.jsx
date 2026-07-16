@@ -1,10 +1,10 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import Nav from "./components/Nav";
 import About from "./pages/About";
 import Resume from "./pages/Resume";
 import Project from "./pages/Project";
-// import profilePicture from "/_DSC0069.jpg";
+import CareerShell from "./components/CareerShell";
 import { Link } from "react-router-dom";
 import {
   FaAngleDoubleDown,
@@ -21,10 +21,22 @@ import { GrLocation } from "react-icons/gr";
 function App() {
   const [activePage, setActivePage] = useState("about");
   const [showcontent, setShowcontent] = useState(false);
+  const [shellOpen, setShellOpen] = useState(false);
 
   const showContent = () => {
     setShowcontent(!showcontent);
   };
+
+  useEffect(() => {
+    const onKey = (e) => {
+      if ((e.ctrlKey || e.metaKey) && e.key === "`") {
+        e.preventDefault();
+        setShellOpen((prev) => !prev);
+      }
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, []);
 
   return (
     <div className="min-h-screen w-full bg-black/93 flex justify-center items-start py-10">
@@ -181,6 +193,18 @@ function App() {
           {activePage === "projects" && <Project />}
         </div>
       </div>
+
+      <button
+        type="button"
+        onClick={() => setShellOpen(true)}
+        className="fixed bottom-20 right-4 z-40 flex h-12 w-12 items-center justify-center rounded-full border border-orange-500/50 bg-neutral-900 text-orange-400 shadow-lg shadow-black/40 transition hover:bg-orange-500 hover:text-black md:bottom-6 md:right-6"
+        aria-label="Open Career Shell"
+        title="Open Terminal (Ctrl + `)"
+      >
+        <span className="material-symbols-outlined">terminal</span>
+      </button>
+
+      <CareerShell open={shellOpen} onClose={() => setShellOpen(false)} />
     </div>
   );
 }
