@@ -35,8 +35,8 @@ function App() {
             <div className="flex flex-col items-center text-center w-full sm:pt-4">
               <div className="flex lg:flex-col lg:justify-center pl-10 md:pl-0 justify-start items-center top-0 pb-3 md:pb-0 w-full">
                 <img
-                  src="https://codewithsadee.github.io/vcard-personal-portfolio/assets/images/my-avatar.png"
-                  alt="Swasthik NJ"
+                  src="/swanj.jpeg"
+                  alt="Swasthik N J"
                   className="h-20 w-20 sm:h-24 sm:w-24 rounded-full object-cover"
                 />
 
