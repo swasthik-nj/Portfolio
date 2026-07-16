@@ -1,14 +1,51 @@
-import React from "react";
+import React, { useState } from "react";
 import { eduData } from "../institution";
 import { Experience } from "../Experience";
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
+
+function CertificateImage({ src, alt }) {
+  const [status, setStatus] = useState("loading"); // "loading" | "loaded" | "error"
+
+  return (
+    <div className="mt-4 relative z-10">
+      <div className="relative flex justify-center items-center w-full min-h-[220px] bg-neutral-950/60 rounded-lg border border-neutral-700/80 p-3">
+        {status === "loading" && (
+          <div className="absolute inset-0 flex flex-col items-center justify-center gap-3">
+            <span className="w-8 h-8 border-2 border-neutral-600 border-t-amber-400 rounded-full animate-spin"></span>
+            <p className="text-sm text-neutral-400">Loading certificate…</p>
+          </div>
+        )}
+        {status === "error" ? (
+          <div className="flex flex-col items-center justify-center gap-2 py-10">
+            <span className="material-symbols-outlined text-red-400 text-3xl">
+              error
+            </span>
+            <p className="text-sm text-neutral-400">
+              Failed to load certificate image.
+            </p>
+          </div>
+        ) : (
+          <img
+            src={src}
+            alt={alt}
+            loading="eager"
+            onLoad={() => setStatus("loaded")}
+            onError={() => setStatus("error")}
+            className={`rounded-md max-w-full max-h-[65vh] object-contain w-auto h-auto transition-opacity duration-300 ${
+              status === "loaded" ? "opacity-100" : "opacity-0"
+            }`}
+          />
+        )}
+      </div>
+    </div>
+  );
+}
 
 export default function Resume() {
   return (
@@ -74,53 +111,35 @@ export default function Resume() {
                 <p className="text-gray-100 dark:text-gray-300  text-sm ">
                   {item.desc}
                 </p>
-                {/* <a
-                  href={item.url}
-                  className="text-white flex items-center gap-2.5 pt-1.5"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  View{" "}
-                  <span className="material-symbols-outlined text-green-500 text-[10px] flex items-center justify-center">
-                    visibility
-                  </span>
-                </a> */}
 
-                <Dialog className="p-0" >
-                  <DialogTrigger className="group relative px-4 mt-2 py-1.5 bg-gradient-to-r from-gray-800/20 to-gray-500/20 hover:from-gray-500/30 hover:to-gray-800/30 backdrop-blur-sm border border-gray-400/50 text-cyan-300 rounded-lg font-medium transition-all duration-300 flex items-center gap-2 shadow-lg hover:shadow-cyan-500/30 hover:scale-105">
-                    <span className="material-symbols-outlined text-lg">
+                <Dialog>
+                  <DialogTrigger className="mt-3 inline-flex items-center gap-2 rounded-md border border-orange-500/40 bg-orange-500/10 px-3.5 py-1.5 text-sm font-medium text-orange-400 transition-colors hover:bg-orange-500 hover:text-black hover:border-orange-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500/50">
+                    <span className="material-symbols-outlined text-[18px]">
                       workspace_premium
                     </span>
                     View Certificate
-                    <span className="material-symbols-outlined text-base group-hover:translate-x-1 transition-transform">
-                      arrow_forward
-                    </span>
                   </DialogTrigger>
-                  <DialogContent className="max-w-5xl w-[85vw] bg-gradient-to-br from-cyan-500/10 via-blue-500/10 to-purple-500/10 backdrop-blur-xl border-2 border-white/20 shadow-2xl shadow-cyan-500/20 before:absolute before:inset-0 before:bg-gradient-to-br before:from-white/10 before:to-transparent before:rounded-lg before:pointer-events-none">
-                    <DialogHeader className="border-b border-white/10 pb-4 relative z-10">
-                      <div className="flex items-center gap-3">
-                        <div className="p-2.5 bg-gradient-to-br from-cyan-400/30 to-blue-500/30 backdrop-blur-md rounded-lg border border-white/20 shadow-lg">
-                          <span className="material-symbols-outlined text-cyan-300 text-2xl">
-                            verified
-                          </span>
-                        </div>
-                        <div>
-                          <DialogTitle className="text-2xl font-bold bg-gradient-to-r from-cyan-300 via-blue-300 to-purple-300 bg-clip-text text-transparent drop-shadow-lg">
-                            {item.company}
-                          </DialogTitle>
-                          <p className="text-sm text-cyan-200/80 mt-1 font-medium">Professional Certificate</p>
-                        </div>
+                  <DialogContent className="max-w-4xl w-[90vw] gap-0 border border-neutral-600 bg-neutral-900 p-0 text-white shadow-2xl sm:max-w-4xl">
+                    <DialogHeader className="flex flex-row items-center gap-3 border-b border-neutral-700 px-5 py-4 text-left">
+                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md border border-neutral-600 bg-neutral-800">
+                        <span className="material-symbols-outlined text-orange-400 text-xl">
+                          verified
+                        </span>
+                      </div>
+                      <div className="min-w-0 pr-8">
+                        <DialogTitle className="text-lg font-semibold text-white tracking-tight">
+                          {item.company}
+                        </DialogTitle>
+                        <p className="mt-0.5 text-sm text-neutral-400">
+                          Internship Certificate
+                        </p>
                       </div>
                     </DialogHeader>
-                    <div className="mt-6 relative z-10">
-                      <div className="absolute inset-0 bg-gradient-to-r from-cyan-400/20 via-blue-400/20 to-purple-400/20 rounded-xl blur-2xl animate-pulse"></div>
-                      <div className="relative flex justify-center items-center w-full bg-black/20 backdrop-blur-md p-2 rounded-xl border border-white/10 shadow-inner">
-                        <img
-                          src={item.imageUrl}
-                          alt={`${item.company} Certificate`}
-                          className="rounded-lg shadow-2xl max-w-full max-h-[65vh] object-contain w-auto h-auto border border-white/20 hover:border-cyan-400/50 transition-all duration-300 hover:scale-[1.02]"
-                        />
-                      </div>
+                    <div className="px-5 pb-5">
+                      <CertificateImage
+                        src={item.imageUrl}
+                        alt={`${item.company} Certificate`}
+                      />
                     </div>
                   </DialogContent>
                 </Dialog>

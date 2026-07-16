@@ -25,33 +25,33 @@ function App() {
   const showContent = () => {
     setShowcontent(!showcontent);
   };
-  
 
   return (
     <div className="min-h-screen w-full bg-black/93 flex justify-center items-start py-10">
-      <div className="max-w-[1200px] w-full flex flex-col lg:flex-row pb-10 gap-7 md:px-4 px-4">
-        <div className="w-full opacity-100  h-full bg-neutral-800/70 rounded-2xl  flex-shrink-0 text-white border border-gray-500  lg:w-[280px]  more ">
+      <div className="max-w-[1200px] w-full flex flex-col lg:flex-row lg:items-start pb-10 gap-7 md:px-4 px-4">
+        {/* Left: only as tall as its content, sticks while page scrolls */}
+        <div className="w-full h-fit bg-neutral-800/70 rounded-2xl flex-shrink-0 text-white border border-gray-500 lg:w-[280px] lg:sticky lg:top-10 more">
           <div className="flex items-center justify-center pt-3 md:pt-0">
             <div className="flex flex-col items-center text-center w-full sm:pt-4">
-              <div className="flex lg:flex-col  lg:justify-center pl-10 md:pl-0 justify-start items-center top-0 pb-3 md:pb-0 w-full">
+              <div className="flex lg:flex-col lg:justify-center pl-10 md:pl-0 justify-start items-center top-0 pb-3 md:pb-0 w-full">
                 <img
-                  src='https://codewithsadee.github.io/vcard-personal-portfolio/assets/images/my-avatar.png'
+                  src="https://codewithsadee.github.io/vcard-personal-portfolio/assets/images/my-avatar.png"
                   alt="Swasthik NJ"
                   className="h-20 w-20 sm:h-24 sm:w-24 rounded-full object-cover"
                 />
 
                 <div className="flex flex-col justify-start items-start lg:items-center">
-                  <p className="text-[18px] sm:text-[22px] md:text-[26px] font-semibold  ">
+                  <p className="text-[18px] sm:text-[22px] md:text-[26px] font-semibold">
                     Swasthik N J
                   </p>
 
-                  <div className="text-[12px]  sm:text-[14px] md:mt-5 mt-2 px-2 py-0.5 md:mb-5 mb-3 bg-gray-500/20  w-fit rounded">
+                  <div className="text-[12px] sm:text-[14px] md:mt-5 mt-2 px-2 py-0.5 md:mb-5 mb-3 bg-gray-500/20 w-fit rounded">
                     Student
                   </div>
                 </div>
               </div>
-              <hr className="w-[10rem] border-t border-gray-700  " />
-              {/* //////////// */}
+              <hr className="w-[10rem] border-t border-gray-700" />
+
               <button
                 className="block md:hidden bg-orange-500 text-black font-semibold text-sm px-4 py-2 rounded-bl-lg rounded-tr-2xl mt-4 absolute top-6 right-4"
                 onClick={showContent}
@@ -78,7 +78,7 @@ function App() {
                     <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-[#141414] border-l-2 border-gray-700">
                       <MdOutlineEmail className="text-yellow-400 text-lg" />
                     </div>
-                    <div className="flex flex-col  items-start w-[11rem]">
+                    <div className="flex flex-col items-start w-[11rem]">
                       <p className="text-[12px] sm:text-[13px] text-gray-400 font-semibold">
                         EMAIL
                       </p>
@@ -94,7 +94,7 @@ function App() {
                     <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-[#141414] border-l-2 border-gray-700">
                       <IoIosPhonePortrait className="text-yellow-400 text-lg" />
                     </div>
-                    <div className="flex flex-col  items-start w-[11rem]">
+                    <div className="flex flex-col items-start w-[11rem]">
                       <p className="text-[12px] sm:text-[13px] text-gray-400 font-semibold">
                         Phone
                       </p>
@@ -110,7 +110,7 @@ function App() {
                     <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-[#141414] border-l-2 border-gray-700">
                       <IoCalendarOutline className="text-yellow-400 text-lg" />
                     </div>
-                    <div className="flex flex-col  items-start w-[11rem]">
+                    <div className="flex flex-col items-start w-[11rem]">
                       <p className="text-[12px] sm:text-[13px] text-gray-400 font-semibold">
                         Birthday
                       </p>
@@ -126,7 +126,7 @@ function App() {
                     <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-[#141414] border-l-2 border-gray-700">
                       <GrLocation className="text-yellow-400 text-lg" />
                     </div>
-                    <div className="flex flex-col  items-start w-[11rem]">
+                    <div className="flex flex-col items-start w-[11rem]">
                       <p className="text-[12px] sm:text-[13px] text-gray-400 font-semibold">
                         Location
                       </p>
@@ -137,7 +137,7 @@ function App() {
                       </p>
                     </div>
                   </div>
-                  <div className="flex gap-4.5 pt-8 pb-7  justify-center">
+                  <div className="flex gap-4.5 pt-8 pb-7 justify-center">
                     <Link
                       to="https://www.instagram.com/swasthik_birwa_official/"
                       target="_blank"
@@ -171,9 +171,10 @@ function App() {
               </div>
             </div>
           </div>
-      </div>
+        </div>
 
-        <div className="relative flex-1 bg-neutral-800/70 border border-gray-500 pb-5 px-4 text-white rounded-2xl overflow-y-auto h-fit ">
+        {/* Right: grows with content; page scrollbar scrolls this side */}
+        <div className="relative flex-1 bg-neutral-800/70 border border-gray-500 pb-5 px-4 text-white rounded-2xl">
           <Nav onNavClick={setActivePage} activePage={activePage} />
           {activePage === "about" && <About />}
           {activePage === "resume" && <Resume />}
