@@ -1,5 +1,10 @@
 export const eduData = [
     {
+        institution: "NMAM Institute of Technology, Nitte",
+        year: "2025 - 2027",
+        description: "Pursuing a Master's degree in Computer Applications with a strong focus on software development, database management, and modern web technologies.",
+    },
+    {
         institution: "SDM College Ujire",
         year: "2022 - 2025",
         description: "Completed a Bachelor's degree in Computer Applications with a strong focus on software development, database management, and modern web technologies.",
