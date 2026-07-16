@@ -17,6 +17,12 @@ const LINKS = {
   portfolio: "https://swasthik-nj.me",
 };
 
+const NAME_BANNER = String.raw`   _____                    __  __    _ __      _   __       __
+  / ___/      ______ ______/ /_/ /_  (_) /__   / | / /      / /
+  \__ \ | /| / / __ \`/ ___/ __/ __ \/ / //_/  /  |/ /  __  / /
+ ___/ / |/ |/ / /_/ (__  ) /_/ / / / / ,<    / /|  /  / /_/ /
+/____/|__/|__/\__,_/____/\__/_/ /_/_/_/|_|  /_/ |_/   \____/`;
+
 function line(text, type = "output") {
   return { id: crypto.randomUUID(), text, type };
 }
@@ -25,25 +31,25 @@ function helpText() {
   return [
     "Available commands:",
     "",
-    "  whoami          Who I am",
-    "  about           Short bio",
-    "  skills          Tech stack",
-    "  experience      Internships",
-    "  education       Education history",
-    "  ls projects     List projects",
-    "  open <project>  Open a project (by number or name)",
-    "  contact         Contact details",
-    "  contact email   Copy email to clipboard",
-    "  resume          Open resume",
-    "  explore         Go to full portfolio",
-    "  socials         Social links",
-    "  open github     Open GitHub",
-    "  open linkedin   Open LinkedIn",
-    "  neofetch        System-style profile card",
-    "  clear           Clear the terminal",
-    "  help            Show this help",
+    "  whoami              Who I am",
+    "  about               Short bio",
+    "  skills              Tech stack",
+    "  experience          Internships",
+    "  education           Education history",
+    "  ls projects         List projects",
+    "  open <project>      Open a project (number or name)",
+    "  contact             Contact details",
+    "  contact email       Copy email to clipboard",
+    "  resume              Open resume",
+    "  explore             Go to full portfolio",
+    "  socials             Social links",
+    "  open github         Open GitHub",
+    "  open linkedin       Open LinkedIn",
+    "  neofetch            System-style profile card",
+    "  clear               Clear the terminal",
+    "  help                Show this help",
     "",
-    "Tip: use ↑ / ↓ for command history",
+    "Tip: ↑ / ↓ history · Ctrl+C cancel · Esc close",
   ].join("\n");
 }
 
@@ -51,7 +57,7 @@ function neofetchText() {
   return [
     "          .--.          visitor@swasthik",
     "         |o_o |         ----------------",
-    "         |:_/ |         OS: Portfolio OS",
+    "         |:_/ |         OS: Portfolio CLI",
     "        //   \\ \\        Host: Swasthik N J",
     "       (|     | )       Role: Full-Stack Developer",
     "      /'\\_   _/`\\       Stack: React · Node · MongoDB",
@@ -60,24 +66,41 @@ function neofetchText() {
   ].join("\n");
 }
 
+const typeColor = {
+  banner: "text-sky-200",
+  command: "text-orange-400",
+  error: "text-red-400",
+  success: "text-orange-300",
+  system: "text-sky-300",
+  muted: "text-neutral-500",
+  accent: "text-orange-300/90",
+  output: "text-neutral-300",
+};
+
 export default function CareerShell({ open, onClose }) {
   const navigate = useNavigate();
   const inputRef = useRef(null);
   const bottomRef = useRef(null);
   const [input, setInput] = useState("");
-  const [history, setHistory] = useState([]);
   const [cmdHistory, setCmdHistory] = useState([]);
   const [histIndex, setHistIndex] = useState(-1);
-  const [lines, setLines] = useState([
-    line("Welcome to SwasthikCLI v1.0", "system"),
-    line('Type "help" to see available commands.', "muted"),
-    line(""),
-  ]);
+  const [lines, setLines] = useState([]);
 
   useEffect(() => {
-    if (open) {
-      setTimeout(() => inputRef.current?.focus(), 50);
+    if (!open) {
+      setLines([]);
+      setInput("");
+      return;
     }
+
+    setLines([
+      line(NAME_BANNER, "banner"),
+      line(""),
+      line("Welcome to my terminal portfolio. (Version 1.3.1)", "system"),
+      line('Type "help" to see available commands.', "muted"),
+      line(""),
+    ]);
+    setTimeout(() => inputRef.current?.focus(), 80);
   }, [open]);
 
   useEffect(() => {
@@ -101,16 +124,13 @@ export default function CareerShell({ open, onClose }) {
     const cmd = raw.trim();
     if (!cmd) return;
 
-    const nextHistory = [...cmdHistory, cmd];
-    setCmdHistory(nextHistory);
+    setCmdHistory((prev) => [...prev, cmd]);
     setHistIndex(-1);
-
     append([line(`${PROMPT} ${cmd}`, "command")]);
 
     const parts = cmd.toLowerCase().split(/\s+/);
     const base = parts[0];
     const arg = parts.slice(1).join(" ");
-
     let output = [];
 
     switch (base) {
@@ -121,7 +141,7 @@ export default function CareerShell({ open, onClose }) {
 
       case "whoami":
         output = [
-          line("Swasthik N J"),
+          line("Swasthik N J", "success"),
           line("Full-Stack Developer · MCA Student"),
           line("Building modern web experiences with React & Node.js"),
         ];
@@ -155,7 +175,7 @@ export default function CareerShell({ open, onClose }) {
       case "experience":
       case "exp":
         output = Experience.flatMap((item, i) => [
-          line(`${i + 1}. ${item.company}`),
+          line(`${i + 1}. ${item.company}`, "success"),
           line(`   ${item.desc.replace(/^-\s*/, "")}`),
           line(""),
         ]);
@@ -164,7 +184,7 @@ export default function CareerShell({ open, onClose }) {
       case "education":
       case "edu":
         output = eduData.flatMap((item) => [
-          line(`${item.institution}  (${item.year})`),
+          line(`${item.institution}  (${item.year})`, "success"),
           line(`  ${item.description}`),
           line(""),
         ]);
@@ -173,21 +193,29 @@ export default function CareerShell({ open, onClose }) {
       case "ls":
         if (!arg || arg === "projects" || arg === ".") {
           output = [
-            line("projects/"),
-            ...projects.map(
-              (p, i) => line(`  [${i + 1}]  ${p.title}`)
-            ),
+            line("projects/", "system"),
+            ...projects.map((p, i) => line(`  [${i + 1}]  ${p.title}`)),
             line(""),
-            line('Use: open <number>  or  open "<name>"'),
+            line('Use: open <number>  or  open "<name>"', "muted"),
           ];
         } else {
-          output = [line(`ls: cannot access '${arg}': No such file or directory`, "error")];
+          output = [
+            line(
+              `ls: cannot access '${arg}': No such file or directory`,
+              "error"
+            ),
+          ];
         }
         break;
 
       case "open": {
         if (!arg) {
-          output = [line("Usage: open <project|github|linkedin|twitter|instagram>", "error")];
+          output = [
+            line(
+              "Usage: open <project|github|linkedin|twitter|instagram>",
+              "error"
+            ),
+          ];
           break;
         }
 
@@ -199,11 +227,17 @@ export default function CareerShell({ open, onClose }) {
 
         const byIndex = Number(arg);
         let project = null;
-        if (!Number.isNaN(byIndex) && byIndex >= 1 && byIndex <= projects.length) {
+        if (
+          !Number.isNaN(byIndex) &&
+          byIndex >= 1 &&
+          byIndex <= projects.length
+        ) {
           project = projects[byIndex - 1];
         } else {
           project = projects.find((p) =>
-            p.title.toLowerCase().includes(arg.replace(/"/g, "").toLowerCase())
+            p.title
+              .toLowerCase()
+              .includes(arg.replace(/"/g, "").toLowerCase())
           );
         }
 
@@ -213,7 +247,7 @@ export default function CareerShell({ open, onClose }) {
         } else {
           output = [
             line(`open: '${arg}' not found.`, "error"),
-            line('Try: ls projects'),
+            line("Try: ls projects", "muted"),
           ];
         }
         break;
@@ -240,7 +274,7 @@ export default function CareerShell({ open, onClose }) {
             line(`Phone     ${PHONE}`),
             line(`Location  Mangaluru, Karnataka, India`),
             line(""),
-            line("Tip: contact email  → copy email"),
+            line("Tip: contact email  → copy email", "muted"),
           ];
         }
         break;
@@ -261,8 +295,8 @@ export default function CareerShell({ open, onClose }) {
         break;
 
       case "socials":
-        output = Object.entries(LINKS).map(
-          ([key, url]) => line(`${key.padEnd(12)} ${url}`)
+        output = Object.entries(LINKS).map(([key, url]) =>
+          line(`${key.padEnd(12)} ${url}`)
         );
         break;
 
@@ -276,7 +310,12 @@ export default function CareerShell({ open, onClose }) {
         return;
 
       case "sudo":
-        output = [line("Nice try. Permission denied — but respect for trying.", "error")];
+        output = [
+          line(
+            "Nice try. Permission denied — but respect for trying.",
+            "error"
+          ),
+        ];
         break;
 
       case "pwd":
@@ -294,7 +333,7 @@ export default function CareerShell({ open, onClose }) {
       default:
         output = [
           line(`Command not found: ${base}`, "error"),
-          line('Type "help" for available commands.'),
+          line('Type "help" for available commands.', "muted"),
         ];
     }
 
@@ -349,63 +388,46 @@ export default function CareerShell({ open, onClose }) {
       <button
         type="button"
         aria-label="Close terminal"
-        className="absolute inset-0 bg-black/70 backdrop-blur-sm"
+        className="absolute inset-0 bg-black/75 backdrop-blur-[2px]"
         onClick={onClose}
       />
 
       <div
-        className="relative z-10 flex w-full max-w-3xl flex-col overflow-hidden rounded-xl border border-neutral-700 bg-[#0c0c0c] shadow-2xl shadow-orange-500/10"
+        className="terminal-boot-in relative z-10 flex w-full max-w-3xl flex-col overflow-hidden rounded-xl border border-neutral-700/90 bg-[#0a0a0a] shadow-[0_25px_80px_rgba(0,0,0,0.65)]"
         style={{ height: "min(560px, 85vh)" }}
         onClick={() => inputRef.current?.focus()}
       >
-        {/* Title bar */}
-        <div className="flex items-center justify-between border-b border-neutral-800 bg-neutral-900 px-4 py-2.5">
+        {/* Title bar — matches your screenshot style */}
+        <div className="flex items-center justify-between border-b border-neutral-800 bg-[#141414] px-4 py-2.5">
           <div className="flex items-center gap-2">
             <button
               type="button"
               onClick={onClose}
-              className="h-3 w-3 rounded-full bg-red-500/90 hover:bg-red-400"
+              className="h-3 w-3 rounded-full bg-[#ff5f57] hover:brightness-110"
               aria-label="Close"
             />
-            <span className="h-3 w-3 rounded-full bg-yellow-500/90" />
-            <span className="h-3 w-3 rounded-full bg-green-500/90" />
+            <span className="h-3 w-3 rounded-full bg-[#febc2e]" />
+            <span className="h-3 w-3 rounded-full bg-[#28c840]" />
           </div>
-          <p className="font-mono text-xs text-neutral-400">
+          <p className="font-mono text-[12px] text-neutral-300">
             swasthik — Career Shell
           </p>
-          <button
-            type="button"
-            onClick={onClose}
-            className="text-neutral-500 hover:text-neutral-300"
-            aria-label="Close terminal"
-          >
-            <span className="material-symbols-outlined text-lg">close</span>
-          </button>
+          <span className="w-10" />
         </div>
 
         {/* Output */}
         <div
-          className="flex-1 overflow-y-auto px-4 py-3 font-mono text-[13px] leading-relaxed sm:text-sm"
+          className="flex-1 overflow-y-auto px-4 py-3 font-mono text-[13px] leading-relaxed sm:text-[13.5px]"
           data-lenis-prevent
         >
           {lines.map((l) => (
             <pre
               key={l.id}
-              className={`whitespace-pre-wrap break-words ${
-                l.type === "command"
-                  ? "text-orange-400"
-                  : l.type === "error"
-                    ? "text-red-400"
-                    : l.type === "success"
-                      ? "text-emerald-400"
-                      : l.type === "system"
-                        ? "text-sky-300"
-                        : l.type === "muted"
-                          ? "text-neutral-500"
-                          : l.type === "accent"
-                            ? "text-orange-300/90"
-                            : "text-neutral-300"
-              }`}
+              className={
+                l.type === "banner"
+                  ? "mb-2 overflow-x-auto whitespace-pre text-[7px] font-semibold leading-[1.15] tracking-tight text-sky-200 sm:text-[10px] md:text-[11px]"
+                  : `whitespace-pre-wrap break-words ${typeColor[l.type] || typeColor.output}`
+              }
             >
               {l.text}
             </pre>
@@ -413,10 +435,10 @@ export default function CareerShell({ open, onClose }) {
           <div ref={bottomRef} />
         </div>
 
-        {/* Input */}
+        {/* Input row */}
         <form
           onSubmit={onSubmit}
-          className="flex items-center gap-2 border-t border-neutral-800 bg-neutral-950 px-4 py-3 font-mono text-[13px] sm:text-sm"
+          className="flex items-center gap-2 border-t border-neutral-800 bg-[#0f0f0f] px-4 py-3 font-mono text-[13px] sm:text-[13.5px]"
         >
           <span className="shrink-0 text-orange-400">{PROMPT}</span>
           <input
@@ -424,13 +446,21 @@ export default function CareerShell({ open, onClose }) {
             value={input}
             onChange={(e) => setInput(e.target.value)}
             onKeyDown={onKeyDown}
-            className="w-full bg-transparent text-neutral-100 outline-none caret-orange-400"
+            className="w-full bg-transparent text-neutral-100 outline-none caret-orange-400 placeholder:text-neutral-600"
             spellCheck={false}
             autoComplete="off"
             autoCapitalize="off"
             placeholder="type a command…"
           />
         </form>
+
+        {/* Status bar */}
+        <div className="flex items-center justify-between border-t border-neutral-800/80 bg-[#121212] px-4 py-1.5 font-mono text-[10px] text-neutral-500">
+          <span>
+            <span className="text-orange-500/80">●</span> connected
+          </span>
+          <span>Ctrl+` toggle · Esc close</span>
+        </div>
       </div>
     </div>
   );
