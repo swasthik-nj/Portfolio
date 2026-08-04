@@ -19,15 +19,21 @@ export const projects = [
     },
     {
         title: "Alumni System",
-        description: "Alumni System — A full-stack web application that connects alumni through events, mentorship programs, community discussions, and donation management, built with React, Node.js, and MongoDB.",
+        description: "A full-stack alumni web app where users can join events, find mentors, and stay connected with their community, built with MERN.",  
         imageUrl: "https://res.cloudinary.com/dm2w1gdeh/image/upload/v1767509225/Screenshot_2026-01-04_121512_rrlx36.png",
         url:"https://alumni-frontend-lovat.vercel.app/"
     },
     {
-        title: "Kunchaladda Gallery",
+        title: "HeritageHub ",
         description: "A responsive gallery website showcasing beautiful photographs and artwork, built with React and CSS.",
         imageUrl: "https://res.cloudinary.com/dm2w1gdeh/image/upload/v1774844201/Screenshot_2026-03-30_094528_uxe9pw.png",
         url:"https://kunchaladda-star-frontend.vercel.app/"
+    },
+    {
+        title: "AutoFlow",
+        description: "Full-stack bike showroom platform for online booking, delivery tracking, inventory, and sales management using React, Node.js, and MongoDB.",
+        imageUrl: "https://res.cloudinary.com/dm2w1gdeh/image/upload/v1785869224/Screenshot_2026-08-05_001406_barbbg.png",
+        url:"https://showroom-mgt-frontend.vercel.app/"
     },
     
 
