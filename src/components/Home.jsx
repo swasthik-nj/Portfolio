@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import profilePicture from "/swanj.jpeg";
 import CareerShell from "./CareerShell";
+import { Boxes } from "./ui/background-boxes";
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState(() => {
@@ -53,7 +54,10 @@ export default function Home() {
   }, [shellOpen]);
 
   return (
-    <div className="w-full min-h-screen dark:bg-white bg-black/92 transition-colors duration-700">
+    <div className="relative w-full min-h-screen dark:bg-white bg-black/92 transition-colors duration-700 overflow-hidden">
+      <div className="absolute inset-0 w-full h-full z-0 opacity-30">
+        <Boxes />
+      </div>
       <div className="flex items-center gap-3 absolute top-4 right-5 sm:right-14 z-20">
         <button
           onClick={() => setDarkMode(!darkMode)}
@@ -75,7 +79,7 @@ export default function Home() {
         </Link>
       </div>
 
-      <div className="w-full max-w-[70rem] mx-auto min-h-screen justify-center items-center flex flex-col gap-6 sm:px-6 lg:px-8 py-20">
+      <div className="relative z-10 w-full max-w-[70rem] mx-auto min-h-screen justify-center items-center flex flex-col gap-6 sm:px-6 lg:px-8 py-20">
         <div className="items-center flex flex-col">
           <img
             src={profilePicture}
@@ -119,7 +123,7 @@ export default function Home() {
           <button
             type="button"
             onClick={() => setShellOpen(true)}
-            className="w-48 text-center px-6 py-2.5 rounded-3xl border border-orange-500/60 bg-orange-500/10 text-orange-400 dark:border-orange-600 dark:text-orange-600 transition flex items-center justify-center gap-2 hover:bg-orange-500 hover:text-black dark:hover:bg-orange-500 dark:hover:text-black"
+            className="sub-btn3 w-48 text-center px-6 py-2.5 rounded-3xl border border-orange-500/60 bg-orange-500/10 text-orange-400 dark:border-orange-600 dark:text-orange-600 transition flex items-center justify-center gap-2 hover:bg-orange-500 hover:text-black dark:hover:bg-orange-500 dark:hover:text-black"
           >
             <span className="material-symbols-outlined text-lg">terminal</span>
             Open Terminal
