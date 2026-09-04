@@ -130,7 +130,7 @@ export default function Home() {
           </button>
         </div>
 
-        <p className="text-xs text-neutral-500 dark:text-neutral-400 font-mono text-center px-4">
+        <p className="hidden sm:block text-xs text-neutral-500 dark:text-neutral-400 font-mono text-center px-4">
           Press{" "}
           <kbd className="rounded border border-neutral-600 px-1.5 py-0.5 dark:border-neutral-400">
             Ctrl
