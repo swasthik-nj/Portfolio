@@ -67,7 +67,7 @@ export const projects = [
   {
     title: "Leave Management System",
     description:"A web-based leave management system that streamlines employee leave applications, balance tracking, and approval workflows through an intuitive admin dashboard.",
-    imageUrl: "YOUR_IMAGE_URL",
-    url: "YOUR_DEPLOYED_URL",
+    imageUrl: "https://res.cloudinary.com/dm2w1gdeh/image/upload/v1792913137/Screenshot_2026-10-25_125447_pnwfv2.png",
+    url: "https://leavemanagementsystem-alpha.vercel.app/dashboard",
   },
 ];
