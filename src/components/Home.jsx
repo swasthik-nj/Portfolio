@@ -93,7 +93,7 @@ export default function Home() {
 
         <div className="flex items-center text-center px-4 sm:px-10">
           <p className="main-head text-3xl sm:text-4xl md:text-6xl/20 font-serif text-shadow-lg dark:text-black text-white">
-            Building Ideas into Digital Experiences <br /> Full-Stack Developer | MERN Stack & AI Enthusiast
+            Building Ideas into Digital Experiences
           </p>
         </div>
 
