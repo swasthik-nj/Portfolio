@@ -93,14 +93,13 @@ export default function Home() {
 
         <div className="flex items-center text-center px-4 sm:px-10">
           <p className="main-head text-3xl sm:text-4xl md:text-6xl/20 font-serif text-shadow-lg dark:text-black text-white">
-            Learning to Build the Web, <br /> Full-Stack Developer in Progress.
+            Building Ideas into Digital Experiences <br /> Full-Stack Developer | MERN Stack & AI Enthusiast
           </p>
         </div>
 
         <div className="px-4 sm:px-10">
           <p className="sub-head text-[15px] sm:text-[17px] dark:text-gray-700 text-gray-400 text-center max-w-xl">
-            Web Development Learner from India, passionate about building modern
-            web experiences.
+            Passionate about developing scalable web applications, solving real-world problems, and continuously learning new technologies
           </p>
         </div>
 
